@@ -25,7 +25,7 @@ if (!isset($_SESSION['login'])) { // verifica que existe la session activa
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>IGLESIA</title>
-	<link rel="Shortcut Icon" type="image/x-icon" href="img/icon.png" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="../../img/icon.png" />
 	<link rel="stylesheet" href="../../css/estilos.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<!-- Bootstrap core CSS -->
