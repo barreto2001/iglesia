@@ -30,7 +30,7 @@ if (!isset($_SESSION['login'])) { // verifica que existe la session activa
 	<link href="../../css/mdb.min.css" rel="stylesheet">
 	<!-- Your custom styles (optional) -->
 	<link href="../../css/style.css" rel="stylesheet">
-	<link href="../../css/estilos.css" rel="stylesheet">
+	<link href="../../css/main.min.css" rel="stylesheet" />
 </head>
 <style>
 
