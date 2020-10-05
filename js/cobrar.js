@@ -64,8 +64,10 @@ function cobrar(){
 			var supervisor = $('#document1').val();//traemos el documento del supervisor
 
 			// concatenamos la informacion del acompañante i junto con el docuento del supervisor
+		
 			
 			if (number==i) {
+				
 				
 				var infos = 'name=' + name + '&tipo=' + tipo + '&document=' + id +  '&supervisor=' + supervisor;
 
@@ -133,6 +135,7 @@ function cobrar(){
 	}else{
 
 		var sillaRes= acom-seleccion.length; //obtenemos sillas restantes por seleccionar
+		$('#sillas').css('background-color','white');
 		if(sillaRes==1){
 			$('#sillas').text('debe seleccionar '+sillaRes+' silla mas'); //mostramos notificacion de silla faltante
 		}else{
