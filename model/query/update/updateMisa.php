@@ -143,10 +143,28 @@ class update{
 
 
 	}
+
+	public function misaAcompananteTwo($id,$name,$tipo,$document,$supervisor,$misa){
+		$resultado=null;
+		$modelo= new conexion();
+		$conexion=$modelo->get_conexion();
+
+		$sql="UPDATE acompanante SET name=:name, tipo=:tipo  WHERE id=:id AND supervisor=:supervisor AND misa=:misa";
+				
+		$result=$conexion->prepare($sql);
+
+		$result -> bindParam(":name", $name);
+		$result -> bindParam(":tipo", $tipo);
+		$result -> bindParam(":id", $id);
+		$result -> bindParam(":supervisor", $supervisor);
+		$result -> bindParam(":misa", $misa);
+	
+
+
+		$result->execute();
+
+	
+
+
+	}
 }
-
-
-
-
-
- ?>

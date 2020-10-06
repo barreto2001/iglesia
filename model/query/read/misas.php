@@ -22,6 +22,28 @@ class queriesMisas{
 
 	}
 
+	public function showMisasActivas(){
+		$resultado=null;
+		$modelo= new conexion();
+		$conexion=$modelo->get_conexion();
+		$activo=true;
+
+		$sql="SELECT * FROM misa WHERE activo=:id";
+				
+		$result=$conexion->prepare($sql);
+		$result->bindparam(":id",$activo);
+
+		$result->execute();
+
+		while ($f=$result->fetch()){
+            $resultado[]=$f;
+        }
+
+        return $resultado;
+
+
+	}
+
 	public function showMiMisa($id){
 		$resultado=null;
 		$modelo= new conexion();
@@ -86,7 +108,3 @@ class queriesMisas{
 	}
 
 }
-
-
-
-?>

@@ -56,6 +56,7 @@ unset($_SESSION['factura']);
 
 
 			<?php
+
 			echo cargarSillas();
 
 			?>

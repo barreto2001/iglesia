@@ -188,29 +188,60 @@ function cargarSillas()
 					$fechadesbloqueo = date("Y-m-d H:i", strtotime($fechadesbloqueo . "+1 week"));
 				}
 
-				if ($mifecha < $superfecha && $disponiblemisa < ($total / 2)) {
+				if ($mifecha < $superfecha) {
 					$seguir1 = true;
 				} else {
-					$seguir1 = false;
+					$seguir1 = false; // PERMITE ELEJIR SILLAS
+				}
+
+				if ($disponiblemisa < ($total / 2)) {
+					$seguir2 = true;
+				} else {
+					$seguir2 = false; // PERMITE ELEJIR SILLAS
 				}
 
 
 				if ($mifecha < $fechadesbloqueo) {
-					$seguir2 = true;
+					$seguir3 = true;
 				} else {
-					$seguir2 = false;
+					$seguir3 = false; // PERMITE ELEJIR SILLAS
 				}
 
+				$fechaMessage = date("d-m-Y", strtotime($fechamimisa));
+				$fechaMessageTwo = date("d-m-Y", strtotime($fechadesbloqueo));
+				$fechaMessageThirt = date("d-m-Y", strtotime($superfecha));
 
-				if ($seguir1 === true && $seguir2 === true) {
+				/*echo "1" . $seguir1;
+				echo "<br>";
+				echo "2" . $seguir2;
+				echo "<br>";
+				echo "3" . $seguir3;
+				echo "<br>";*/
+
+				if ($seguir1 == true && $seguir2 == true && $seguir3 == true) {
+					$_SESSION['factura'] = true;
+
+					echo "<div>
+					
+					<p>TU ULTIMA MISA FUE EL " . $fechaMessage . " POR LO CUAL NO PUEDES PARTICIPAR EN OTRA MISA HASTA DENTRO DE UNA SEMANA (" . $fechaMessageTwo . ") A MENOS QUE A LA MISA LE FALTEN 24 HORAS Y TENGA DISPONIBILIDAD DE MAS DEL 40% DE SILLAS</p>
+					
+					</div>";
+				} else if (($seguir1 == true && $seguir2 == false  && $seguir3 == true) || ($seguir2 == true && $seguir1 == false && $seguir3 == true)) {
+					$_SESSION['factura'] = true;
+
+					echo "<div>
+					
+					<p>TU ULTIMA MISA FUE EL " . $fechaMessage . " POR LO CUAL NO PUEDES PARTICIPAR EN OTRA MISA HASTA DENTRO DE UNA SEMANA (" . $fechaMessageTwo . ") A MENOS QUE A LA MISA LE FALTEN 24 HORAS Y TENGA DISPONIBILIDAD DE MAS DEL 40% DE SILLAS</p>
+					
+					</div>";
+				} else if (($seguir1 == true && $seguir3 == true) || ($seguir2 == true && $seguir3 == true) && $seguir3 == true) {
 					$_SESSION['factura'] = true;
 					echo "<div>
 					
-					<p>TU ULTIMA MISA FUE EL " . $fechamimisa . " POR LO CUAL NO PUEDES PARTICIPAR EN OTRA MISA HASTA DENTRO DE UNA SEMANA A MENOS QUE A LA MISA LE FALTEN 24 HORAS Y TENGA DISPONIBILIDAD DE MAS DEL 40% DE SILLAS</p>
+					<p>TU ULTIMA MISA FUE EL " . $fechaMessage . " POR LO CUAL NO PUEDES PARTICIPAR EN OTRA MISA HASTA DENTRO DE UNA SEMANA (" . $fechaMessageTwo . ") A MENOS QUE A LA MISA LE FALTEN 24 HORAS Y TENGA DISPONIBILIDAD DE MAS DEL 40% DE SILLAS</p>
 					
 					</div>";
 				} else {
-
 
 
 
@@ -230,11 +261,12 @@ function cargarSillas()
 
 						echo '<label for="">Nombres</label><input type="text" value="' . $name . '" disabled required class="mas" value id="name1">';
 						echo '<label for="">N° de Identificación</label><input type="number" disabled value="' . $document . '" class="mas" id="document1">';
-						echo '<form action="../../controllers/create/regisAcompañante.php" id="newform">
+						echo '<form action="" id="newform" name="form">
 					<label for="">N° Acompañantes</label>
 					<input type="number" name="Nacompanante" id="acom" placeholder="N° Acompañantes " value="0">';
 						echo '<div id="micompañia"></div>
-					<br> <br></form>';
+					<br> <br>
+					</form>';
 
 						$queries = new verification();
 
@@ -329,8 +361,8 @@ function cargarSillas()
 						}
 
 						echo '<button type="button" class="btn btn-outline-info btn-rounded " id="comprar" onclick="comprar()" >SELECCIONAR</button>
-				  <button type="button" id="cobrar" class="btn btn-outline-info btn-rounded " disabled  onclick="cobrar()" >RESERVAR</button>';
-						echo "</section>";
+				  <button type="submit" id="cobrar" class="btn btn-outline-info btn-rounded " disabled  onclick="cobrar()" >RESERVAR</button>';
+				  echo "</section>";
 					} else {
 						echo "<script>location.href='tableMisas.php'</script>";
 					}
@@ -349,9 +381,11 @@ function cargarSillas()
 function cargarMisasPadre()
 {
 
+
 	$queries = new queriesMisas();
 	//Genera consulta en la tabla user para obtener los usuarios
 	$result = $queries->showMisas();
+
 
 
 	if (isset($result)) { //En caso de haya un error en la variable resultado

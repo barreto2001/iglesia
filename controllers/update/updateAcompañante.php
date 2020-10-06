@@ -20,7 +20,8 @@
 			
 			if (isset($result) || isset($resultTwo)) {
 
-				echo "<script>alert('Acompañante registrado en otra misa')</script>";
+				$model= new update();
+                $conexion=$model->misaAcompananteTwo($id,$name,$tipo,$document,$supervisor,$misa);
 				
 
 			}else{

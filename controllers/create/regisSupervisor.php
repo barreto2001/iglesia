@@ -27,6 +27,7 @@ function insertSupervisor()
 
 	$acompanante = explode(',', $acompanante);
 	$sillas = explode(',', $sillas);
+	$_SESSION['cantidadAcompanante']=count($acompanante);
 
 
 	for ($i = 0; $i < count($acompanante); $i++) {
@@ -58,7 +59,7 @@ function insertSupervisor()
 	$model = new update();
 	$conexio = $model->changeShair($misa, $sdisponible);
 	unset($_SESSION['sillasDisponibles']);
-	unset($_SESSION['misa']);
+
 }
 
 echo insertSupervisor();

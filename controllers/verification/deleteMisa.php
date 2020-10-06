@@ -8,7 +8,7 @@ require_once('model/query/read/misas.php');
 		//$queriesTwo = new deleteMisas();
 		  $queriesTwo = new update();
 		//Genera consulta en la tabla user para obtener los usuarios
-		$result=$queries->showMisas();
+		$result=$queries->showMisasActivas();
 		date_default_timezone_set("America/Bogota");
 	//echo date("h:i:s",strtotime("+ 5 minutes"));
 	

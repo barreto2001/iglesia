@@ -4,7 +4,7 @@
 	require_once('../../model/query/create/registro.php');
 
 
-	$name=trim(strtolower(ucwords($_POST['name'])));
+	$name=trim(ucwords(strtolower($_POST['name'])));
 	$tipo=$_POST['type'];
 	$documento=trim($_POST['documento']);
 	$email=$_POST['email'];
