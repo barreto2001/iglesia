@@ -40,6 +40,7 @@ unset($_SESSION['factura']);
 	<!-- Your custom styles (optional) -->
 	<link href="../../css/style.css" rel="stylesheet">
 	<link href="../../css/main.min.css" rel="stylesheet" />
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css" rel="stylesheet">
 </head>
 
 <body>
@@ -126,6 +127,7 @@ unset($_SESSION['factura']);
 	<script type="text/javascript" src="../../js/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="../../js/js/mdb.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 
 
 </body>

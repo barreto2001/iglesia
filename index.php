@@ -23,6 +23,8 @@ session_destroy();
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/main.min.css" rel="stylesheet" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -86,8 +88,8 @@ session_destroy();
     <!-- Material form login -->
   </section>
 
-  <section id="registro">
-    <div class="container">
+  <section id="registro" >
+    <div class="container contenedor">
       <!-- Material form register -->
       <div class="card">
         <h5 class="card-header info-color white-text text-center py-4">
@@ -140,7 +142,7 @@ session_destroy();
             </div>
 
             <!-- Sign up button -->
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" style="width: 30%; margin-left: 350px">
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" style=" margin: 0 auto;">
               Registrate
             </button>
           </form>
@@ -150,6 +152,10 @@ session_destroy();
       <!-- Material form register -->
     </div>
   </section>
+  <?php
+  include('view/footer.html');
+  ?>
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
   <!-- SCRIPTS -->
@@ -160,6 +166,8 @@ session_destroy();
   <script type="text/javascript" src="js/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/js/mdb.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
 </body>
 
 </html>

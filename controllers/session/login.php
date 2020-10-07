@@ -1,7 +1,10 @@
 <?php
 require_once('../../model/conexion/conexion.php');
 require_once('../../model/query/create/registro.php');
+require_once( '../modales/modal.php');
 session_start();
+echo'<body>';
+echo '<link rel="stylesheet" href="../../css/main.min.css">';
 
 $email=$_POST['email'];
 $pass=md5($_POST['pass']);
@@ -56,32 +59,17 @@ if (isset($consulta)) {
 
                     </script>";
             }else{
-                echo "<script>
-            alert('Contraseña incorrecta');
-
-            location.href='../../index.php';
-
-            </script>";
+                
+            modalAlert('Contraseña incorrecta','../../index.php','error',2);
             }
             
             
 
         }else{
-            echo "<script>
-            alert('Contraseña incorrecta');
-
-            location.href='../../index.php';
-
-            </script>";
+            modalAlert('Contraseña incorrecta','../../index.php','error',2);
         }
 }else{
-    echo "<script>
-    alert('el usuario no existe');
 
-   location.href='../../index.php';
-
-    </script>";
+    modalAlert('El usuario no existe','../../index.php','error',2);
 
 }
-
-?>

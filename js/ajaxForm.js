@@ -17,8 +17,19 @@ $(function() {
 		})
 		.done(function(response) {
 			
-			alert('misa creada');
-			location.reload();
+			Swal.fire({
+				
+				text: "Misa creada con exito",
+				icon: "success",
+				showConfirmButton: false,
+				timer: 2000
+			  });
+
+			  setInterval(() => {
+				location.reload();
+			  }, 2000);
+		   
+			
 
 		})
 		.fail(function(data) {

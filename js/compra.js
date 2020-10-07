@@ -13,7 +13,13 @@ function comprar() {
     if (acom > disponible.length) {
       //verificamos que hallas sillas disponibles segun los acompañantes
 
-      alert("solo hay disponible " + disponible.length + " sillas"); // manda un alert diciendo cuantas sillas hay disponibles
+      Swal.fire({
+        title: "OJO",
+        text: "Solo hay disponible " + disponible.length + " sillas",
+        icon: "warning",
+        showConfirmButton: true,
+      });
+      // manda un alert diciendo cuantas sillas hay disponibles
     } else {
       if (acom == 1) {
         // significa que solo va una persona sin acompañantes

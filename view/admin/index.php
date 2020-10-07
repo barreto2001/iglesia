@@ -31,6 +31,7 @@ if (!isset($_SESSION['login'])) { // verifica que existe la session activa
 	<!-- Your custom styles (optional) -->
 	<link href="../../css/style.css" rel="stylesheet">
 	<link href="../../css/main.min.css" rel="stylesheet" />
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css" rel="stylesheet">
 </head>
 <style>
 
@@ -66,31 +67,31 @@ if (!isset($_SESSION['login'])) { // verifica que existe la session activa
 						<div class="col">
 							<!-- Last name -->
 							<div class="md-form">
-								<input type="date" id="materialRegisterFormLastName" name="fecha" class="form-control">
+								<input type="date" id="materialRegisterFormLastName" name="fecha" class="form-control" required>
 								<label for="materialRegisterFormLastName">Fecha:</label>
 							</div>
 						</div>
 					</div>
 					<!-- Phone number -->
 					<div class="md-form">
-						<input type="time" id="materialRegisterFormPhone" name="hinicio" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+						<input type="time" id="materialRegisterFormPhone" required name="hinicio" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
 						<label for="materialRegisterFormPhone">Hora de inicio:</label>
 					</div>
 
 					<!-- E-mail -->
 					<div class="md-form mt-0">
-						<input type="time" id="materialRegisterFormEmail" name="hfin" class="form-control">
+						<input type="time" id="materialRegisterFormEmail" required name="hfin" class="form-control">
 						<label for="materialRegisterFormEmail">Hora Fin:</label>
 					</div>
 
 					<!-- Password -->
 					<div class="md-form">
-						<input type="number" id="materialRegisterFormPassword" class="form-control numberfilas" name="n_filas" aria-describedby="materialRegisterFormPasswordHelpBlock">
+						<input type="number" id="materialRegisterFormPassword" required class="form-control numberfilas" name="n_filas" aria-describedby="materialRegisterFormPasswordHelpBlock">
 						<label for="materialRegisterFormPassword">Numero de filas:</label>
 
 					</div>
 					<div class="md-form mt-0">
-						<input type="number" class="form-control numbercolumnas" name="n_columnas" aria-describedby="materialRegisterFormPasswordHelpBlock">
+						<input type="number" class="form-control numbercolumnas" required name="n_columnas" aria-describedby="materialRegisterFormPasswordHelpBlock">
 						<label for="">Numero de columnas</label>
 
 					</div>
@@ -141,6 +142,7 @@ if (!isset($_SESSION['login'])) { // verifica que existe la session activa
 	<script type="text/javascript" src="../../js/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="../../js/js/mdb.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 
 </body>
 

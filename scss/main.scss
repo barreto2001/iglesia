@@ -1,5 +1,5 @@
-$colorPrimary:#33b5e5;
-$colorSecundary:white;
+$colorPrimary: #33b5e5;
+$colorSecundary: white;
 body {
   background-image: url(../img/fondo.jpg);
   background-repeat: no-repeat;
@@ -12,10 +12,42 @@ body {
   margin-left: 10px;
 }
 #contenedor {
-  width: 500px;
-  height: 800px;
-  margin-left: 440px;
+  margin: 0 auto !important;
+  width: 40%;
+
+  margin-top: 40px !important;
+  overflow: scroll;
+}
+.contenedor {
+  margin: 0 auto !important;
+  width: 40% !important;
   margin-top: 40px;
+  margin-bottom: -70px;
+  overflow: scroll;
+}
+@media screen and (max-width: 1100px) {
+  .contenedor,
+  #contenedor {
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contenedor,
+  #contenedor {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contenedor,
+  #contenedor {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contenedor,
+  #contenedor {
+    width: 98% !important;
+  }
 }
 
 #div1 {
@@ -67,7 +99,7 @@ body {
 }
 
 #tableMisa {
-  background-color:$colorSecundary;
+  background-color: $colorSecundary;
   padding: 20px;
 }
 #sectionCompra {
@@ -133,3 +165,4 @@ legend {
   background-color: $colorSecundary !important;
   opacity: 1 !important;
 }
+
